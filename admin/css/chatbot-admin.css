@@ -1,0 +1,411 @@
+/* Variables globales */
+:root {
+    --color-primary: #2271b1;
+    --color-secondary: #f0f0f1;
+    --color-border: #c3c4c7;
+    --color-text: #2c3338;
+    --color-background: #ffffff;
+    --color-success: #00a32a;
+    --color-error: #d63638;
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --border-radius: 4px;
+    --transition: all 0.2s ease-in-out;
+}
+
+/* Estilos generales del panel de administración */
+.chatbot-admin {
+    padding: var(--spacing-lg);
+
+    & h1 {
+        margin-bottom: var(--spacing-xl);
+        color: var(--color-text);
+    }
+
+    & .chatbot-section {
+        background: var(--color-background);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        padding: var(--spacing-lg);
+        margin-bottom: var(--spacing-xl);
+
+        & h2 {
+            margin-top: 0;
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        & h3 {
+            margin: var(--spacing-lg) 0 var(--spacing-md);
+        }
+    }
+}
+
+/* Sección del Logo */
+.logo-section {
+    & .logo-settings {
+        display: flex;
+        gap: var(--spacing-xl);
+        padding: var(--spacing-lg);
+
+        & .logo-preview-wrapper {
+            flex: 0 0 auto;
+
+            & .logo-preview {
+                width: 120px;
+                height: 120px;
+                border: 2px dashed var(--color-border);
+                border-radius: 50%;
+                margin-bottom: var(--spacing-md);
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                & img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            & .logo-actions {
+                display: flex;
+                gap: var(--spacing-sm);
+
+                & button {
+                    flex: 1;
+                }
+            }
+        }
+
+        & .logo-description {
+            flex: 1;
+
+            & ul {
+                list-style: disc;
+                margin-left: var(--spacing-xl);
+                margin-bottom: var(--spacing-md);
+
+                & li {
+                    margin-bottom: var(--spacing-xs);
+                }
+            }
+
+            & .description {
+                color: #666;
+                font-style: italic;
+            }
+        }
+    }
+}
+
+/* Sección de Shortcode */
+.shortcode-section {
+    & .shortcode-info {
+        background: var(--color-secondary);
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius);
+
+        & code {
+            display: inline-block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            font-family: monospace;
+        }
+    }
+}
+
+/* Formularios */
+.qa-form,
+.modal form {
+    & .form-group {
+        margin-bottom: var(--spacing-md);
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+
+        & label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 500;
+        }
+
+        & input[type="text"],
+        & textarea {
+            width: 100%;
+            padding: var(--spacing-sm);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+
+            &:focus {
+                border-color: var(--color-primary);
+                box-shadow: 0 0 0 1px var(--color-primary);
+                outline: none;
+            }
+        }
+
+        & textarea {
+            min-height: 120px;
+        }
+
+        &.checkbox {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+
+            & label {
+                margin: 0;
+            }
+        }
+    }
+}
+
+/* Keywords */
+.keyword-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+
+    & .keyword-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        background: var(--color-secondary);
+        border-radius: var(--border-radius);
+        font-size: 0.9em;
+
+        & .remove-tag {
+            border: none;
+            background: none;
+            color: var(--color-text);
+            cursor: pointer;
+            padding: 0;
+            font-size: 1.2em;
+            line-height: 1;
+
+            &:hover {
+                color: var(--color-error);
+            }
+        }
+    }
+}
+
+/* Tabla de Q&A */
+.qa-list-wrapper {
+    & table {
+        border-collapse: collapse;
+        width: 100%;
+
+        & th {
+            text-align: left;
+            padding: var(--spacing-sm);
+        }
+
+        & td {
+            padding: var(--spacing-sm);
+            vertical-align: top;
+
+            &.actions-cell {
+                white-space: nowrap;
+                text-align: right;
+
+                & button {
+                    margin-left: var(--spacing-xs);
+                }
+            }
+        }
+    }
+}
+
+/* Notificaciones */
+.notice {
+    margin: var(--spacing-md) 0;
+
+    &.notice-success {
+        border-left-color: var(--color-success);
+    }
+
+    &.notice-error {
+        border-left-color: var(--color-error);
+    }
+}
+
+/* Paginación */
+.tablenav-pages {
+    margin: var(--spacing-lg) 0;
+    text-align: right;
+
+    & a,
+    & span {
+        display: inline-block;
+        padding: var(--spacing-xs) var(--spacing-sm);
+        margin: 0 var(--spacing-xs);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        text-decoration: none;
+
+        &.current {
+            background: var(--color-primary);
+            color: var(--color-background);
+            border-color: var(--color-primary);
+        }
+
+        &:hover:not(.current) {
+            background: var(--color-secondary);
+        }
+    }
+}
+
+.config-section {
+    .config-form {
+        max-width: 600px;
+        margin-top: var(--spacing-md);
+
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+
+            label {
+                display: block;
+                font-weight: 500;
+                margin-bottom: var(--spacing-sm);
+            }
+
+            .regular-text {
+                width: 100%;
+                padding: var(--spacing-sm);
+                border: 1px solid var(--color-border);
+                border-radius: 4px;
+
+                &:focus {
+                    border-color: var(--color-primary);
+                    box-shadow: 0 0 0 1px var(--color-primary);
+                    outline: none;
+                }
+            }
+
+            textarea.regular-text {
+                min-height: 100px;
+                resize: vertical;
+            }
+
+            .description {
+                margin-top: var(--spacing-xs);
+                color: #666;
+                font-style: italic;
+            }
+        }
+
+        .button-primary {
+            margin-top: var(--spacing-md);
+        }
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+    .logo-settings {
+        flex-direction: column;
+
+        & .logo-preview-wrapper {
+            align-self: center;
+        }
+    }
+
+    .qa-list-wrapper {
+        overflow-x: auto;
+
+        & table {
+            min-width: 600px;
+        }
+    }
+}
+
+/* Estilos del Modal */
+.chatbot-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.chatbot-modal-content {
+    background: var(--color-background);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.chatbot-edit-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbot-modal h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: var(--color-text);
+}
+
+.chatbot-modal .form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.chatbot-modal .button-primary {
+    margin-top: var(--spacing-md);
+}
+
+.chatbot-modal .button-secondary {
+    margin-top: var(--spacing-sm);
+    background: #ddd;
+}
+
+.chatbot-modal .close-modal {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+.chatbot-modal.open {
+    opacity: 1;
+    visibility: visible;
+    display: flex !important;
+}
+
+.chatbot-modal.open .chatbot-modal-content {
+    animation: modalIn 0.3s ease-out;
+}
+
+@keyframes modalIn {
+    from {
+        transform: scale(0.7);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
